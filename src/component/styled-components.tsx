@@ -71,6 +71,14 @@ export const AddButtonStyle = styled.button`
     position: absolute;
     right: 38%;
     width: 55px;
+
+    @media (max-width: 768px) {
+            right: 27%;
+        }
+
+    @media (max-width: 430px) {
+        right: 21%;
+    }
 `
 
 export const IconButton = styled.button`
