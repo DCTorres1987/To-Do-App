@@ -1,10 +1,11 @@
 import ToDoTask from "./component/ToDoTask";
+import { TaskProvider } from "./component/ToDoContext";
 
 function App() {
   return (
-    <div className="App">
+    <TaskProvider>
       <ToDoTask />
-    </div>
+    </TaskProvider>
   );
 }
 
