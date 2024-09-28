@@ -7,7 +7,17 @@ export const Main = styled.div`
         height: 600px;
         justify-content: center;
         margin: auto;
-        max-width: 36%
+        max-width: 36%;
+
+        @media (max-width: 768px) {
+            max-width: 80%;
+            height: auto;
+        }
+
+        @media (max-width: 480px) {
+            max-width: 95%;
+            height: auto;
+        }
 `;
 
 export const Header = styled.div`
@@ -32,14 +42,38 @@ export const Input = styled.input`
     border-radius: 8px;
     height: 30px;
     margin-left: 40px;
-    width: 300px;
+    min-width: 74%;
+    position: relative;
+/* 
+    @media (max-width: 768px) {
+        max-width: 74%;
+        margin-left: 40px;
+    }
+
+    @media (max-width: 480px) {
+        min-width: 74%;
+    } */
 `;
 
 export const Button = styled.button`
     height: 30px;
     width: 55px;
     margin-left: 8px;
+
+    @media (max-width: 768px) {
+        width: 50px;
+    }
 `;
+
+export const AddButtonStyle = styled.button`
+    background-color: transparent;
+    border: unset;
+    height: 30px;
+    margin-top: 4px;
+    position: absolute;
+    right: 38%;
+    width: 55px;
+`
 
 export const IconButton = styled.button`
     background-color: transparent;

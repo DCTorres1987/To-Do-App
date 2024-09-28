@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from "../styled-components";
+import { AddButtonStyle } from '../styled-components';
 
 interface Props {
     addTask: () => void;
@@ -8,11 +8,11 @@ interface Props {
 const AddButton: React.FC<Props> = ({ addTask }) => {
 
     return (
-        <Button 
+        <AddButtonStyle 
             type='button'
             onClick={addTask}>
-                Add +
-        </Button>
+                <i className="fa-solid fa-plus"></i>
+        </AddButtonStyle>
 
     )
 }

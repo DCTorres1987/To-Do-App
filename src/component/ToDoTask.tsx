@@ -4,6 +4,7 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import React, { useContext } from "react";
 import { TaskContext } from "./ToDoContext";
 import AddButton from "./button/AddButton";
+import SaveButton from "./button/SaveButton";
 
 
 const ToDoTask = () => {
@@ -61,7 +62,7 @@ const ToDoTask = () => {
                     onChange={(e) => setEditText(e.target.value)}
                     onKeyDown={handleKeyDownEdit}
                 />
-                <Button onClick={saveEditedTask}>Save</Button>
+                <SaveButton saveEditedTask={saveEditedTask} />
                 <Button onClick={() => setEditIndex(null)}>Cancel</Button>
             </div>)
             }

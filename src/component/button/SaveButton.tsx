@@ -1,6 +1,11 @@
+import React from 'react';
 import { Button } from "../styled-components"
 
-const SaveButton = (saveEditedTask) => {
+interface Props {
+    saveEditedTask: () => void;
+};
+
+const SaveButton: React.FC<Props> = ({saveEditedTask}) => {
 
 return (
     <Button 
