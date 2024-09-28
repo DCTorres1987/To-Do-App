@@ -76,7 +76,7 @@ export const AddButtonStyle = styled.button`
             right: 27%;
         }
 
-    @media (max-width: 430px) {
+    @media (max-width: 465px) {
         right: 21%;
     }
 `
