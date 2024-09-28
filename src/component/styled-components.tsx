@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React from 'react';
+import React, { forwardRef }  from 'react';
 
 export const Main = styled.div`
         background: #efefef;
@@ -65,6 +65,12 @@ const StyledListItemContainer = styled.div`
   margin: 10px 0 0 40px;
 `;
 
-export const ListItemContainer = React.forwardRef((props, ref) => (
-  <StyledListItemContainer ref={ref} {...props} />
-));
+// Define the props for your ListItemContainer
+interface ListItemContainerProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+// Forward ref component with correct types
+export const ListItemContainer = forwardRef<HTMLDivElement, ListItemContainerProps>(
+  (props, ref) => (
+    <StyledListItemContainer ref={ref} {...props} />
+  )
+);

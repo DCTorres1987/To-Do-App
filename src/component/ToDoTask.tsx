@@ -4,7 +4,6 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import React, { useContext } from "react";
 import { TaskContext } from "./ToDoContext";
 import AddButton from "./button/AddButton";
-import SaveButton from "./button/SaveButton";
 
 
 const ToDoTask = () => {
@@ -25,13 +24,13 @@ const ToDoTask = () => {
     } = useContext(TaskContext);
 
 
-  const handleKeyDown = (event) => {
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
-      addTask();  // Add task when Enter is pressed
+      addTask();
     }
   };
 
-  const handleKeyDownEdit = (event) => {
+  const handleKeyDownEdit = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter') {
         saveEditedTask();  // Add task when Enter is pressed
       }
@@ -62,7 +61,7 @@ const ToDoTask = () => {
                     onChange={(e) => setEditText(e.target.value)}
                     onKeyDown={handleKeyDownEdit}
                 />
-                <SaveButton saveEditedTask={saveEditedTask}/>
+                <Button onClick={saveEditedTask}>Save</Button>
                 <Button onClick={() => setEditIndex(null)}>Cancel</Button>
             </div>)
             }
@@ -94,10 +93,10 @@ const ToDoTask = () => {
                                                     </div>
                                                     <div className ='iconContainer'>
                                                         <IconButton onClick={() => handleEditTask(index)}>
-                                                            <i class="fa-solid fa-pen-to-square"></i>
+                                                            <i className="fa-solid fa-pen-to-square"></i>
                                                         </IconButton>
                                                         <IconButton onClick={() => deleteTask(index)}>
-                                                            <i class="fa-solid fa-trash-can"></i>
+                                                            <i className="fa-solid fa-trash-can"></i>
                                                         </IconButton>
                                                     </div>
                                                 </TaskContainer>
