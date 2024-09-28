@@ -69,7 +69,7 @@ export const AddButtonStyle = styled.button`
     height: 30px;
     margin-top: 4px;
     position: absolute;
-    right: 38%;
+    right: 39%;
     width: 55px;
 
     @media (max-width: 768px) {
