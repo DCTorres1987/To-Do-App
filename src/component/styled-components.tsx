@@ -11,12 +11,10 @@ export const Main = styled.div`
 
         @media (max-width: 768px) {
             max-width: 80%;
-            height: auto;
         }
 
         @media (max-width: 480px) {
             max-width: 95%;
-            height: auto;
         }
 `;
 
