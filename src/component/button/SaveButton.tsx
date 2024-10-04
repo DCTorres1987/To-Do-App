@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from "../styled-components"
+import { ButtonStyle } from "../styled-components"
 
 interface Props {
     saveEditedTask: () => void;
@@ -8,10 +8,10 @@ interface Props {
 const SaveButton: React.FC<Props> = ({saveEditedTask}) => {
 
 return (
-    <Button 
+    <ButtonStyle 
         onClick={saveEditedTask}>
-        Save
-    </Button>
+        <i className="fa-solid fa-floppy-disk"></i>
+    </ButtonStyle>
 )};
 
 export default SaveButton;

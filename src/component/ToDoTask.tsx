@@ -1,10 +1,24 @@
-import { Button, Header, Icon, IconButton, Input, ListItem, ListItemContainer, Main, TaskContainer, Title } from "./styled-components";
+import { 
+            Header, 
+            Icon, 
+            IconButton, 
+            Input, 
+            EditContainer, 
+            EditButtonsContainer, 
+            ListItem, 
+            ListItemContainer, 
+            Main, 
+            TaskContainer, 
+            Title 
+} from "./styled-components";
+
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 import React, { useContext } from "react";
 import { TaskContext } from "./ToDoContext";
 import AddButton from "./button/AddButton";
 import SaveButton from "./button/SaveButton";
+import CancelButton from "./button/CancelButton";
 
 
 const ToDoTask = () => {
@@ -45,26 +59,30 @@ const ToDoTask = () => {
                 <Icon><i className="far fa-calendar-plus"></i></Icon>
                 <Title>To-Do List</Title>
             </Header>
-            {!isEditMode ? (<div>
-                <Input 
-                    placeholder="Add your task.." 
-                    type="text"
-                    value={newTask}
-                    onChange={(e) => setNewTask(e.target.value)}
-                    onKeyDown={handleKeyDown}
-                />
-                <AddButton addTask={addTask} />
-            </div>) :
-            (<div>
+            {!isEditMode ? (
+                <div className='input-container'>
+                    <Input 
+                        placeholder="Add your task.." 
+                        type="text"
+                        value={newTask}
+                        onChange={(e) => setNewTask(e.target.value)}
+                        onKeyDown={handleKeyDown}
+                    />
+                    <AddButton addTask={addTask} />
+                </div>
+        ) :
+            (<EditContainer className='edit-container'>
                 <Input
                     type="text"
                     value={editText}
                     onChange={(e) => setEditText(e.target.value)}
                     onKeyDown={handleKeyDownEdit}
                 />
-                <SaveButton saveEditedTask={saveEditedTask} />
-                <Button onClick={() => setEditIndex(null)}>Cancel</Button>
-            </div>)
+                <EditButtonsContainer className='edit-buttons-container'>
+                    <SaveButton saveEditedTask={saveEditedTask} />
+                    <CancelButton setEditIndex={setEditIndex} />
+                </EditButtonsContainer>
+            </EditContainer>)
             }
             <DragDropContext onDragEnd={handleOnDragEnd}>
                 <Droppable droppableId="tasks">
@@ -105,7 +123,7 @@ const ToDoTask = () => {
                                         )}
                                     </Draggable>
                                 ))}
-                            {provided.placeholder}
+                                {provided.placeholder}
                             </ListItemContainer>
                         )}
                 </Droppable>

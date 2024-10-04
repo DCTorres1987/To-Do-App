@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect, ReactNode } from 'react';
 import { DropResult } from 'react-beautiful-dnd';
 
-interface Task {
+type Task = {
     text: string;
     completed: boolean;
 }
@@ -46,7 +46,7 @@ const defaultTaskContext: TaskContextType = {
 export const TaskContext = createContext<TaskContextType>(defaultTaskContext);
 
 // Define the props for TaskProvider, using PropsWithChildren
-interface TaskProviderProps {
+type TaskProviderProps = {
     children: ReactNode;
 }
 
@@ -62,11 +62,6 @@ export const TaskProvider: React.FC<TaskProviderProps>  = ({children}) => {
         loadTasksFromLocalStorage();
     }, []);
 
-    // Save tasks to local storage whenever tasks state changes
-    useEffect(() => {
-        saveTasksToLocalStorage(tasks);
-    }, [tasks]);
-
     // Function to load tasks from local storage
     const loadTasksFromLocalStorage = () => {
         try {
@@ -76,18 +71,24 @@ export const TaskProvider: React.FC<TaskProviderProps>  = ({children}) => {
                 setTasks(JSON.parse(savedTasks));
             }
         } catch (error) {
-        console.error("Failed to load tasks from local storage:", error);
+            console.error("Failed to load tasks from local storage:", error);
+            setTasks([]);
         }
     };
 
     // Function to save tasks to local storage
     const saveTasksToLocalStorage = (tasks: Task[]) => {
         try {
-        localStorage.setItem("tasks", JSON.stringify(tasks));
+            localStorage.setItem("tasks", JSON.stringify(tasks));
         } catch (error) {
-        console.error("Failed to save tasks to local storage:", error);
+            console.error("Failed to save tasks to local storage:", error);
         }
     };
+
+    // Save tasks to local storage whenever tasks state changes
+    useEffect(() => {
+        saveTasksToLocalStorage(tasks);
+    }, [tasks]);
 
     // Add a new task
     const addTask = () => {

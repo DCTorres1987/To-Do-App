@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# To-Do Task App
+
+This is a simple yet efficient To-Do Task App built with React and TypeScript, allowing users to manage tasks by adding, editing, deleting, and reordering tasks using drag-and-drop functionality. The app also features task persistence using local storage.
+
+Table of Contents
+[Getting Started](#getting-started-with-create-react-app)
+[Features](#features)
+[Technologies Used](#technologies-used)
+[Installation](#installation)
+[Usage](#usage)
+Optimizations
+Folder Structure
+Contributing
+License
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Add Tasks:** Easily add new tasks to the to-do list.
+- **Edit Tasks:** Edit existing tasks by clicking the edit icon.
+- **Mark Tasks as Completed:** Toggle task completion with a click.
+- **Delete Tasks:** Remove tasks from the list.
+- **Reorder Tasks:** Drag and drop tasks to reorder them.
+- **Persistent Storage:** Tasks are saved in local storage, so your list remains even after a page refresh.
+- **Responsive Design:** Optimized for both desktop and mobile use.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React with TypeScript:** A modern JavaScript library for building user interfaces.
+- **react-beautiful-dnd:** Provides drag-and-drop functionality for reordering tasks.
+- **Styled-Components:** Utilized for component-level styles in a clean and modular way.
+- **Local Storage:** Tasks are persisted locally in the browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+1. Clone this repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    ```git clone https://github.com/your-username/todo-task-app.git```
 
-### `npm run build`
+2. Navigate to the project directory:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    ```cd todo-task-app```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Install the dependencies using yarn or npm:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    ```yarn install```
 
-### `npm run eject`
+    or
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    ```npm install```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Start the development server:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    ```yarn start```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    or
 
-## Learn More
+    ```npm start```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+5. Open your browser and visit http://localhost:3000 to view the app.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Usage
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Add a Task:** Type a task into the input field and either press Enter or click the "+" button.
+- **Mark Task as Completed:** Click on a task to toggle its completed status (it will be crossed out).
+- **Edit a Task:** Click the pencil icon next to a task, make changes in the input field, and save.
+- **Delete a Task:** Click the trash icon next to a task to remove it.
+- **Reorder Tasks:** Drag and drop tasks to reorder them within the list.

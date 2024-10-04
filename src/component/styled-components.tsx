@@ -41,7 +41,7 @@ export const Input = styled.input`
     height: 30px;
     margin-left: 40px;
     min-width: 74%;
-    position: relative;
+    position: static;
 /* 
     @media (max-width: 768px) {
         max-width: 74%;
@@ -53,24 +53,15 @@ export const Input = styled.input`
     } */
 `;
 
-export const Button = styled.button`
-    height: 30px;
-    width: 55px;
-    margin-left: 8px;
+export const EditContainer = styled.div`
+    display: flex;
+`
 
-    @media (max-width: 768px) {
-        width: 50px;
-    }
-`;
-
-export const AddButtonStyle = styled.button`
-    background-color: transparent;
-    border: unset;
-    height: 30px;
-    margin-top: 4px;
+export const  EditButtonsContainer = styled.div`
+    display: flex;
+    flex-direction: row;
     position: absolute;
     right: 39%;
-    width: 55px;
 
     @media (max-width: 768px) {
             right: 27%;
@@ -80,6 +71,23 @@ export const AddButtonStyle = styled.button`
         right: 21%;
     }
 `
+
+export const ButtonStyle = styled.button`
+    background-color: transparent;
+    border: unset;
+    height: 30px;
+    margin-top: 4px;
+    padding-right: 5px;
+    right: 39%;
+
+    @media (max-width: 768px) {
+            right: 27%;
+        }
+
+    @media (max-width: 465px) {
+        right: 21%;
+    }
+`;
 
 export const IconButton = styled.button`
     background-color: transparent;
