@@ -38,11 +38,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 1. Clone this repository:
 
-    ```git clone https://github.com/your-username/todo-task-app.git```
+    ```git clone https://github.com/your-username/To-Do-App.git```
 
 2. Navigate to the project directory:
 
-    ```cd todo-task-app```
+    ```cd to-do-task-list```
 
 3. Install the dependencies using yarn or npm:
 
