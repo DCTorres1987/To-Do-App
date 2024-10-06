@@ -9,12 +9,14 @@ type Task = {
 // Define the shape of the context (array of tasks and the setTasks function)
 type TaskContextType = {
     addTask: () => void;
+    background: string;
     deleteTask: (index: number) => void; 
     editIndex: number | null;
     editText: string;
     handleOnDragEnd: (result: any) => void;
     handleEditTask: (index: number) => void;
     newTask: string;
+    setBackground: React.Dispatch<React.SetStateAction<string>>;
     setEditIndex: React.Dispatch<React.SetStateAction<number | null>>;
     setEditText: React.Dispatch<React.SetStateAction<string>>;
     saveEditedTask: () => void;
@@ -27,12 +29,14 @@ type TaskContextType = {
 // Provide a default value
 const defaultTaskContext: TaskContextType = {
     addTask: () => {},
+    background: "",
     deleteTask: () => {},
     editIndex: null,
     editText: "",
     handleOnDragEnd: () => {},
     handleEditTask: () => {},
     newTask: "",
+    setBackground: () => {},
     setEditIndex: () => {},
     setEditText: () => {},
     saveEditedTask: () => {},
@@ -56,6 +60,7 @@ export const TaskProvider: React.FC<TaskProviderProps>  = ({children}) => {
     const [newTask, setNewTask] = useState("");
     const [editIndex, setEditIndex] = useState<number | null>(null);
     const [editText, setEditText] = useState<string>("");
+    const [background, setBackground] = useState('');
 
     // Load tasks from local storage when the component mounts
     useEffect(() => {
@@ -147,6 +152,7 @@ export const TaskProvider: React.FC<TaskProviderProps>  = ({children}) => {
         <TaskContext.Provider
         value={{
             addTask,
+            background,
             editIndex,
             editText,
             deleteTask,
@@ -154,10 +160,11 @@ export const TaskProvider: React.FC<TaskProviderProps>  = ({children}) => {
             handleOnDragEnd,
             newTask,
             saveEditedTask,
-            setTasks,
-            setNewTask,
+            setBackground,
             setEditIndex,
             setEditText,
+            setNewTask,
+            setTasks,
             tasks,
             toggleTaskCompletion,
         }}
