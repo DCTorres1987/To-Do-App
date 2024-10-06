@@ -111,7 +111,7 @@ export const ListItem = styled.div`
     border-radius: 10px;
     margin-bottom: 5px;
     padding: 9px;
-    width: 100%; /* Take full width of the container */
+    width: 400px; /* Take full width of the container */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Soft shadow for neatness */
     word-wrap: break-word; /* Ensure long text breaks properly */
 
